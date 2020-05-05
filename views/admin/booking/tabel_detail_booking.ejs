@@ -1,0 +1,67 @@
+
+
+  <div class="tab-pane fade show active" id="show_feature" role="tabpanel" aria-labelledby="home-tab">
+
+    <div class="card shadow mb-4 mt-2">
+        <div class="card-header py-3">
+            <a href="/admin/booking" class="btn btn-warning">back</a>
+        </div>
+      <div class="card-body">
+         
+       <div class="row">
+           <div class="col-md-4 ">
+               <img src="http://localhost:3000/<%= booking.payments.proofPayment %> " alt="" style="width: 100; display:block; " width="300">
+               <div class="row ml-4">
+                <% if(booking.payments.status == 'Proses') { %> 
+                <form action="/admin/booking/<%= booking.id %>/confirmation?_method=PUT " method="POST">
+                    <button type="submit" class="btn btn-success btn-sm"  >
+                        <i class="fas fa-check"></i>
+                        confirmation
+                    </button>
+                    
+                   </form>
+                   <form action="/admin/booking/<%= booking.id %>/reject?_method=PUT " method="POST" class="ml-2">
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="fas fa-times"></i>
+                        reject
+                    </button>
+                    
+                   </form>
+                <% } %> 
+
+               </div>
+               
+        
+           </div>
+           <div class="col-md-7">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTableFeature" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>name</th>
+                      <th>bank from</th>
+                      <th>title</th>
+                
+                     
+                    
+                     
+                    </tr> 
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><%= booking.memberId.firstName %> <%= booking.memberId.lastName %> </td>
+                          <td><%= booking.total %>  </td>
+                          <td><%= booking.payments.bankFrom %>  </td>
+                          <td><%= booking.itemId.title %></td>
+                      </tr>
+                  </tbody>
+                 
+            
+                </table>
+              </div>
+           </div>
+       </div>
+      </div>
+    </div>
+  </div>

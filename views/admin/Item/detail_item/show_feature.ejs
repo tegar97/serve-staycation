@@ -1,0 +1,75 @@
+
+
+  <div class="tab-pane fade show active" id="show_feature" role="tabpanel" aria-labelledby="home-tab">
+
+    <div class="card shadow mb-4 mt-2">
+     
+      <div class="card-body">
+       <div class="row">
+           <div class="col-md-5">
+            <form action="/admin/item/add/feature" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="">Name</label>
+                  <input type="text" name="name"  class="form-control" required>
+                
+                  <label for="">QTY</label>
+                  <input type="number" name="qty"  class="form-control" required>
+                
+           
+    
+                  <label for="">image</label>
+                  <input type="file" name="image"  class="form-control" >
+                <input type="hidden" value="<%= itemId %>" name="itemId">
+                </div>
+             
+       
+           
+        
+              <button type="submit" class="btn btn-primary">submit</button>
+           
+          </form>
+
+           </div>
+           <div class="col-md-7">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTableFeature" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>name</th>
+                      <th>qty</th>
+                      <th>image</th>
+                      <th>action</th>
+                    
+                     
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <% for(let i = 0; i < feature.length; i++) {  %> 
+                      <tr>
+                          <td><%= i + 1 %> </td>
+                          <td><%= feature[i].name  %> </td>
+                          <td><%= feature[i].qty  %> </td>
+
+                          <td><img src="http://localhost:3000/<%= feature[i].imageUrl %>  " width="100" height=70 alt=""></td>
+                          <td>
+                                <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm btn-update" data-id="<%= feature[i].id %>" data-name="<%= feature[i].name %>" data-qty="<%= feature[i].qty  %>" ><i class="fas fa-edit"></i></a>                            <form class="d-inline" action="/admin/item/<%= itemId%>/feature/<%= feature[i].id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+        
+                              </form>
+                             
+          
+                           
+                          </td>
+        
+                      </tr>
+                    <% } %> 
+                  </tbody>
+            
+                </table>
+              </div>
+           </div>
+       </div>
+      </div>
+    </div>
+  </div>

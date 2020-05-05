@@ -20,4 +20,4 @@ const featureSchema = new mongoose.Schema({
     
 })
 
-module.exports = mongoose.model('feature',featureSchema)
+module.exports = mongoose.model('Feature',featureSchema)

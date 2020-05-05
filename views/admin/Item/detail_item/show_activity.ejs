@@ -49,7 +49,7 @@
                           <td><%= activity[i].name  %> </td>
                           <td><%= activity[i].type  %> </td>
 
-                          <td><img src="http://localhost:3000/<%= activity[i].imageUrl %>  " width="100" height=70 alt=""></td>
+                          <td><img src="https://server-staycation.herokuapp.com/<%= activity[i].imageUrl %>  " width="100" height=70 alt=""></td>
                           <td>
                                 <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm btn-update" data-id="<%= activity[i].id %>" data-name="<%= activity[i].name %>" data-type="<%= activity[i].type  %>" ><i class="fas fa-edit"></i></a>                            <form class="d-inline" action="/admin/item/<%= itemId%>/activity/<%= activity[i].id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>

@@ -10,7 +10,7 @@
          
        <div class="row">
            <div class="col-md-4 ">
-               <img src="http://localhost:3000/<%= booking.payments.proofPayment %> " alt="" style="width: 100; display:block; " width="300">
+               <img src="https://server-staycation.herokuapp.com/<%= booking.payments.proofPayment %> " alt="" style="width: 100; display:block; " width="300">
                <div class="row ml-4">
                 <% if(booking.payments.status == 'Proses') { %> 
                 <form action="/admin/booking/<%= booking.id %>/confirmation?_method=PUT " method="POST">

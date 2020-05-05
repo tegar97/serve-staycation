@@ -20,4 +20,4 @@ const bankSchema = new mongoose.Schema({
     
 })
 
-module.exports = mongoose.model('bank',bankSchema)
+module.exports = mongoose.model('Bank',bankSchema)
